@@ -45,3 +45,9 @@ Temporary Items
 .classpath
 .project
 .settings/
+/target/
+
+
+
+target/
+logs/
