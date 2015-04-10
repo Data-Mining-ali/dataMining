@@ -2,11 +2,9 @@ package tianchi.dataMining.other;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 import weka.classifiers.Classifier;
@@ -19,13 +17,13 @@ public class ModelSerializing {
 
 		// train
 		Instances inst = new Instances(new BufferedReader(new FileReader(
-				"D://环境安装包//weka-3-6-12//data//breast-cancer.arff")));
+				"E:/DataMining/alibaba/weka-3-6-12/data/breast-cancer.arff")));
 		inst.setClassIndex(inst.numAttributes() - 1);
 		cls.buildClassifier(inst);
 
 		// serialize model
 		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(
-				"E:/data/j48.model"));
+				"E:/DataMining/alibaba/data/j48.model"));
 		oos.writeObject(cls);
 		oos.flush();
 		oos.close();
@@ -33,10 +31,10 @@ public class ModelSerializing {
 
 	public void modelDeserializing() throws Exception {
 		Classifier tree = (Classifier) weka.core.SerializationHelper
-				.read("E:/data/j48.model");
+				.read("E:/DataMining/alibaba/data/j48.model");
 		
 		Instances unlabeled = new Instances(new BufferedReader(new FileReader(
-				"D://环境安装包//weka-3-6-12//data//breast-cancer.arff")));
+				"E:/DataMining/alibaba/weka-3-6-12/data/breast-cancer.arff")));
 
 		// set class attribute
 		unlabeled.setClassIndex(unlabeled.numAttributes() - 1);
@@ -63,6 +61,5 @@ public class ModelSerializing {
 		ModelSerializing a = new ModelSerializing();
 		a.modelSerializing();
 		a.modelDeserializing();
-
 	}
 }
