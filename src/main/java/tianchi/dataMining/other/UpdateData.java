@@ -59,17 +59,19 @@ public class UpdateData {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		UpdateData a = new UpdateData();
+
+		a.updataData("E:/学习资料/数据挖掘比赛/数据/Ali-splitData/sameple_filter_testing.csv", "E:/学习资料/数据挖掘比赛/数据/Ali-splitData/sameple_filter_testing1.csv");
+		a.updataData("E:/学习资料/数据挖掘比赛/数据/Ali-splitData/sameple_filter_validata.csv", "E:/学习资料/数据挖掘比赛/数据/Ali-splitData/sameple_filter_validata1.csv");
+		//a.updataData("/home/tangxinye/september/python/rawdata/4.10/filter_19.csv", "/home/tangxinye/september/python/rawdata/4.10/filter_191.csv");
+
 		/*
-		a.updataData("/home/tangxinye/september/python/rawdata/4.10/filter_testing.csv", "/home/tangxinye/september/python/rawdata/4.10/filter_testing1.csv");
-		a.updataData("/home/tangxinye/september/python/rawdata/4.10/filter_validata.csv", "/home/tangxinye/september/python/rawdata/4.10/filter_validata1.csv");
-		a.updataData("/home/tangxinye/september/python/rawdata/4.10/filter_19.csv", "/home/tangxinye/september/python/rawdata/4.10/filter_191.csv");
-		*/
 		try {
 			a.removeDataAttribute("E:/data/text.csv", "E:/data/filter_testingOthers.csv");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 
 	}
 
