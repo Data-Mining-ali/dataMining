@@ -31,7 +31,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>testDemo1</finalName>
+		<finalName>ClassifyingInstancesLR</finalName>
 		<plugins>
 			<!-- any other plugins -->
 			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 
@@ -50,7 +50,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>tianchi.dataMining.other.TrainingModel</mainClass>
+							<mainClass>tianchi.dataMining.other.ClassifyingInstances</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
