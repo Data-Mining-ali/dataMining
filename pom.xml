@@ -31,7 +31,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>RandomForest</finalName>
+		<finalName>gererateResult</finalName>
 		<plugins>
 			<!-- any other plugins -->
 			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 
@@ -50,7 +50,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>tianchi.dataMining.other.TrainingModel</mainClass>
+							<mainClass>tianchi.dataMining.other.UpdateResultData</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

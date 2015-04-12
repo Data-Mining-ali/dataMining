@@ -3,7 +3,6 @@ package tianchi.dataMining.other;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -28,6 +27,7 @@ public class UpdateResultData {
 			    strSrc = cinSrc.readLine();
 			    if(strResult.charAt(strResult.length()-1)=='s'){
 			    	StringBuilder sb = new StringBuilder();
+			    	System.out.println(strSrc);
 			    	String[] tmp = strSrc.split(",");
 			    	sb.append(tmp[0]).append(",");
 			    	sb.append(strResult);
@@ -72,12 +72,10 @@ public class UpdateResultData {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str = "51870430$330202665";
-		System.out.println(str.split("\\$")[0]);
 		UpdateResultData a = new UpdateResultData();
 		try {
-			//a.updataData("E:/data/result/result.csv", "E:/data/result/filter_19.csv", "E:/data/result/tmp.csv");
-			a.generateResult("E:/data/result/tianchi_mobile_recommend_train_item.csv", "E:/data/result/tmp.csv", "E:/data/result/lastResult.csv");
+			a.updataData(args[0], args[1], args[2]);
+			//a.generateResult(args[3], args[2], args[4]);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

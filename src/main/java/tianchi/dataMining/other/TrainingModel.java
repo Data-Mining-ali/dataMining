@@ -139,7 +139,7 @@ public class TrainingModel {
 				"/home/tangxinye/september/python/output/4.10/LR.txt");
 */
 		System.out.println(args[2]);
-		aModel.traingLR(args[0],args[1],args[2]);	
+		aModel.traingRandomForest(args[0],args[1],args[2]);	
 
 	}
 

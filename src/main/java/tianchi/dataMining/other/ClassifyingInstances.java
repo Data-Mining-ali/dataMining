@@ -1,7 +1,6 @@
 package tianchi.dataMining.other;
 
-import weka.classifiers.functions.Logistic;
-import weka.classifiers.trees.J48;
+import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSink;
 import weka.core.converters.ConverterUtils.DataSource;
@@ -17,7 +16,7 @@ public class ClassifyingInstances {
 		//Logistic model = new Logistic(); // new instance of tree
 		//model.setOptions(weka.core.Utils.splitOptions("-R 1.0 -M -1 -D"));
 		
-		J48 model = new J48(); // new instance of tree
+		RandomForest model = new RandomForest(); // new instance of tree
 		//model.setOptions(weka.core.Utils.splitOptions("-R 1.0 -M -1 -D"));
 		
 		String[] options = new String[2];
@@ -47,12 +46,8 @@ public class ClassifyingInstances {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		ClassifyingInstances aModel = new ClassifyingInstances();		
-
-		aModel.classifyingInstances("/home/tangxinye/september/python/rawdata/4.10/filter_testing1.csv",
-				"/home/tangxinye/september/python/rawdata/4.10/filter_validata1.csv",
-				"/home/tangxinye/september/python/output/4.10/result_18.csv");	
-		
+		ClassifyingInstances aModel = new ClassifyingInstances();	
+		aModel.classifyingInstances(args[0], args[1], args[2]);	
 
 	}
 
