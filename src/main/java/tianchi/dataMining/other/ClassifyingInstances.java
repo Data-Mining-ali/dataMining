@@ -31,9 +31,9 @@ public class ClassifyingInstances {
 		
 		Instances unlabeled = DataSource.read(unlabledDateFile);
 		unlabeled.setClassIndex(unlabeled.numAttributes() - 1);
+		Instances labeled = new Instances(unlabeled);
 		Instances  newunlabeled= Filter.useFilter(unlabeled, remove); // apply filter
-		// create copy
-		Instances labeled = new Instances(newunlabeled);
+		
 		// label instances
 		for (int i = 0; i < newunlabeled.numInstances(); i++) {
 		  double clsLabel = model.classifyInstance(newunlabeled.instance(i));

@@ -31,7 +31,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>gererateResult</finalName>
+		<finalName>ClassifyingInstancesRFLast</finalName>
 		<plugins>
 			<!-- any other plugins -->
 			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 
@@ -50,7 +50,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>tianchi.dataMining.other.UpdateResultData</mainClass>
+							<mainClass>tianchi.dataMining.other.ClassifyingInstances</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

@@ -1,0 +1,33 @@
+IP:124.16.136.165
+user:root
+password:songxiliang
+path:/home/tangxinye/september/python
+
+
+%s/yes/&/gn
+
+E:/学习资料/数据挖掘比赛/数据/Ali-splitData/sameple_filter_testing1.csv E:/学习资料/数据挖掘比赛/数据/Ali-splitData/sameple_filter_validata1.csv E:/学习资料/数据挖掘比赛/数据/Ali-splitData/result.txt
+
+/home/tangxinye/september/python/rawdata/4.11/sameple_filter_testing1.csv  /home/tangxinye/september/python/rawdata/4.11/sameple_filter_validata1.csv /home/tangxinye/september/python/output/4.11/RandomForest.txt
+
+../rawdata/4.12/sameple_50_filter_testing.csv  ../rawdata/4.12/sameple_50_filter_validata.csv ../output/4.12/RandomForest.txt
+
+
+../rawdata/4.12/sameple_50_filter_validata.csv ../rawdata/4.10/filter_191.csv  ../output/4.12/result.csv
+
+
+
+../output/4.11/result.csv ../rawdata/4.10/filter_191.csv ../output/4.11/resultYes.csv ../rawdata/tianchi_mobile_recommend_train_item.csv ../output/4.11/resultLast.csv
+
+
+E:/data/learn/credit-g.arff E:/data/learn/credit-g-test.arff E:/data/learn/result.csv
+
+
+E:/data/result/result.csv E:/data/result/filter_191.csv E:/data/result/resultTmp.csv E:/data/result/tianchi_mobile_recommend_train_item.csv E:/data/result/resultLast.csv
+
+E:/data/result/正负样本1：50结果/result.csv E:/data/result/tianchi_mobile_recommend_train_item.csv E:/data/result/resultLastTest1.csv
+
+
+../rawdata/4.10/filter_191.csv
+
+../output/4.12/result.csv ../rawdata/4.10/filter_191.csv ../output/4.12/resultYes.csv ../rawdata/tianchi_mobile_recommend_train_item.csv ../output/4.12/resultLast.csv

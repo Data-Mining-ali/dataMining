@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UpdateResultData {
-	
+	/*
 	public void updataData(String resultFileName, String srcFileName,String desFileName) throws IOException{
 		File readFile = new File(resultFileName);
 		File srcFile = new File(srcFileName);
@@ -40,11 +40,19 @@ public class UpdateResultData {
 		cinSrc.close();
 		out.close();			
 	}
-	
-	public void generateResult(String itemFileName, String tmpFileName,String desFilename) throws Exception{
+	*/
+
+	/**
+	 * 
+	 * @param itemFileName  商品子集
+	 * @param resultFileName 生成的结果集
+	 * @param desFilename   分类为yes的结果和商品子集求交集
+	 * @throws Exception
+	 */
+	public void generateResult(String resultFileName,String itemFileName, String desFilename) throws Exception{
 		Map<String,Boolean> map = new HashMap<String,Boolean>();
 		File itemFile = new File(itemFileName);
-		File tmpFile = new File(tmpFileName);
+		File tmpFile = new File(resultFileName);
 		File result = new File(desFilename);
 		BufferedReader cinItem = new BufferedReader(new FileReader(itemFile));
 		BufferedReader cinTmp = new BufferedReader(new FileReader(tmpFile));
@@ -57,7 +65,7 @@ public class UpdateResultData {
 		}
 		cinItem.close();
 		tmpResult = cinTmp.readLine();
-		while((tmpResult = cinTmp.readLine())!=null){
+		while((tmpResult = cinTmp.readLine())!=null && tmpResult.charAt(tmpResult.length()-1)=='s'){
 			String[] tmp = tmpResult.split(",");
 			String[] idTmp = tmp[0].split("\\$");
 			if(map.containsKey(idTmp[1])){
@@ -69,13 +77,12 @@ public class UpdateResultData {
 		cinTmp.close();
 		out.close();		
 	}
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		UpdateResultData a = new UpdateResultData();
-		try {
-			a.updataData(args[0], args[1], args[2]);
-			//a.generateResult(args[3], args[2], args[4]);
+		try {	
+			a.generateResult(args[0], args[1], args[2]);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
