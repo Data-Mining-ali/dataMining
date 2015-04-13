@@ -1,12 +1,10 @@
 IP:124.16.136.165
-user:root
-password:songxiliang
 path:/home/tangxinye/september/python
 
 
 %s/yes/&/gn
 
-E:/Ñ§Ï°×ÊÁÏ/Êý¾ÝÍÚ¾ò±ÈÈü/Êý¾Ý/Ali-splitData/sameple_filter_testing1.csv E:/Ñ§Ï°×ÊÁÏ/Êý¾ÝÍÚ¾ò±ÈÈü/Êý¾Ý/Ali-splitData/sameple_filter_validata1.csv E:/Ñ§Ï°×ÊÁÏ/Êý¾ÝÍÚ¾ò±ÈÈü/Êý¾Ý/Ali-splitData/result.txt
+E:/Ñ§Ï°ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½/Ali-splitData/sameple_filter_testing1.csv E:/Ñ§Ï°ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½/Ali-splitData/sameple_filter_validata1.csv E:/Ñ§Ï°ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½/Ali-splitData/result.txt
 
 /home/tangxinye/september/python/rawdata/4.11/sameple_filter_testing1.csv  /home/tangxinye/september/python/rawdata/4.11/sameple_filter_validata1.csv /home/tangxinye/september/python/output/4.11/RandomForest.txt
 
@@ -25,7 +23,7 @@ E:/data/learn/credit-g.arff E:/data/learn/credit-g-test.arff E:/data/learn/resul
 
 E:/data/result/result.csv E:/data/result/filter_191.csv E:/data/result/resultTmp.csv E:/data/result/tianchi_mobile_recommend_train_item.csv E:/data/result/resultLast.csv
 
-E:/data/result/Õý¸ºÑù±¾1£º50½á¹û/result.csv E:/data/result/tianchi_mobile_recommend_train_item.csv E:/data/result/resultLastTest1.csv
+E:/data/result/ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½50ï¿½ï¿½ï¿½/result.csv E:/data/result/tianchi_mobile_recommend_train_item.csv E:/data/result/resultLastTest1.csv
 
 
 ../rawdata/4.10/filter_191.csv
