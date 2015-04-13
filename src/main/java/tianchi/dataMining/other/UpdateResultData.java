@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UpdateResultData {
-	/*
+
 	public void updataData(String resultFileName, String srcFileName,String desFileName) throws IOException{
 		File readFile = new File(resultFileName);
 		File srcFile = new File(srcFileName);
@@ -40,7 +40,7 @@ public class UpdateResultData {
 		cinSrc.close();
 		out.close();			
 	}
-	*/
+
 
 	/**
 	 * 
@@ -82,7 +82,9 @@ public class UpdateResultData {
 		// TODO Auto-generated method stub
 		UpdateResultData a = new UpdateResultData();
 		try {	
-			a.generateResult(args[0], args[1], args[2]);
+			//a.generateResult(args[0], args[1], args[2]);
+			//a.updataData("E:/data/4.13/4.13/data/output/result.csv", "E:/data/result/filter_191.csv", "E:/data/4.13/4.13/data/output/resulttmp.csv");
+			a.generateResult("E:/data/4.13/4.13/data/output/resulttmp.csv", "E:/data/result/tianchi_mobile_recommend_train_item.csv", "E:/data/4.13/4.13/data/output/resultLast.csv");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

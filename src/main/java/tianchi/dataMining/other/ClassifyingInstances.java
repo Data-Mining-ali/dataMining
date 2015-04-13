@@ -79,7 +79,7 @@ public class ClassifyingInstances {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		ClassifyingInstances aModel = new ClassifyingInstances();	
-		aModel.classifyingInstancesGBDT(args[0], args[1], args[2]);	
+		aModel.classifyingInstancesRandomForest(args[0], args[1], args[2]);	
 
 	}
 
