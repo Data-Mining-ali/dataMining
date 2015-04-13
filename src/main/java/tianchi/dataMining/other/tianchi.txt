@@ -2,7 +2,7 @@ IP:124.16.136.165
 path:/home/tangxinye/september/python
 
 
-%s/yes/&/gn
+%s/0.006633/&/gn
 
 E:/ѧϰ����/����ھ����/���/Ali-splitData/sameple_filter_testing1.csv E:/ѧϰ����/����ھ����/���/Ali-splitData/sameple_filter_validata1.csv E:/ѧϰ����/����ھ����/���/Ali-splitData/result.txt
 
@@ -18,6 +18,9 @@ E:/ѧϰ����/����ھ����/���/Ali-splitData/sameple_f
 ../output/4.11/result.csv ../rawdata/4.10/filter_191.csv ../output/4.11/resultYes.csv ../rawdata/tianchi_mobile_recommend_train_item.csv ../output/4.11/resultLast.csv
 
 
+../rawdata/4.13/sameple_50_filter_testing.csv  ../rawdata/4.13/sameple_50_filter_validata.csv ../output/4.13/RandomForest2.txt
+
+
 E:/data/learn/credit-g.arff E:/data/learn/credit-g-test.arff E:/data/learn/result.csv
 
 
@@ -29,3 +32,8 @@ E:/data/result/����1��50���/result.csv E:/data/result/tianchi_
 ../rawdata/4.10/filter_191.csv
 
 ../output/4.12/result.csv ../rawdata/4.10/filter_191.csv ../output/4.12/resultYes.csv ../rawdata/tianchi_mobile_recommend_train_item.csv ../output/4.12/resultLast.csv
+
+
+../rawdata/4.12/sameple_50_filter_testing.csv  ../rawdata/4.12/sameple_50_filter_validata.csv ../output/4.13/GBDT50.txt
+
+../rawdata/4.12/sameple_50_filter_validata1.csv  ../rawdata/4.10/filter_19.csv ../output/4.13/GBDT50.csv
