@@ -65,14 +65,35 @@ public class UpdateResultData {
 		}
 		cinItem.close();
 		tmpResult = cinTmp.readLine();
+		out.write("user_id,item_id");
+		out.newLine();
 		while((tmpResult = cinTmp.readLine())!=null && tmpResult.charAt(tmpResult.length()-1)=='s'){
 			String[] tmp = tmpResult.split(",");
-			String[] idTmp = tmp[0].split("\\$");
-			if(map.containsKey(idTmp[1])){
-				String a = idTmp[0]+"," + idTmp[1];	
+			if(map.containsKey(tmp[1])){
+				String a = tmp[0]+"," + tmp[1];	
 				out.write(a);
 				out.newLine();
 			}
+		}
+		cinTmp.close();
+		out.close();		
+	}
+	
+	public void generateResultNew(String resultFileName,String desFilename) throws Exception{
+		
+		File tmpFile = new File(resultFileName);
+		File result = new File(desFilename);
+		BufferedReader cinTmp = new BufferedReader(new FileReader(tmpFile));
+		BufferedWriter out = new BufferedWriter(new FileWriter(result,false));
+		String tmpResult = null;
+		tmpResult = cinTmp.readLine();
+		out.write("user_id,item_id");
+		out.newLine();
+		while((tmpResult = cinTmp.readLine())!=null && tmpResult.charAt(tmpResult.length()-1)=='s'){
+			String[] tmp = tmpResult.split(",");
+			String a = tmp[0]+"," + tmp[1];	
+			out.write(a);
+			out.newLine();
 		}
 		cinTmp.close();
 		out.close();		
@@ -84,7 +105,8 @@ public class UpdateResultData {
 		try {	
 			//a.generateResult(args[0], args[1], args[2]);
 			//a.updataData("E:/data/4.13/4.13/data/output/result.csv", "E:/data/result/filter_191.csv", "E:/data/4.13/4.13/data/output/resulttmp.csv");
-			a.generateResult("E:/data/4.13/4.13/data/output/resulttmp.csv", "E:/data/result/tianchi_mobile_recommend_train_item.csv", "E:/data/4.13/4.13/data/output/resultLast.csv");
+			//a.generateResult("E:/data/4.13/4.13/data/output/resulttmp.csv", "E:/data/result/tianchi_mobile_recommend_train_item.csv", "E:/data/4.13/4.13/data/output/resultLast.csv");
+			a.generateResultNew(args[0], args[1]);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

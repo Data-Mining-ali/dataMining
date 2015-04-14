@@ -27,6 +27,7 @@ public class TrainingModel {
 
 		Logistic model = new Logistic(); // new instance of tree
 		
+		
 		String[] options = new String[2];
 		options[0] = "-R"; // "range"
 		options[1] = "1"; // first attribute
@@ -37,8 +38,9 @@ public class TrainingModel {
 		Instances newData = Filter.useFilter(data, remove); // apply filter
 		Instances newValidataData = Filter.useFilter(validataData, remove);
 		model.buildClassifier(newData); // build classifier
-		
+		Evaluation.evaluateModel(model, options);
 		Evaluation eval = new Evaluation(newData);
+		
 		eval.evaluateModel(model, newValidataData);
 		File outputs = new File(evaluationFile);
 		BufferedWriter out = new BufferedWriter(new FileWriter(outputs,false));
@@ -70,12 +72,10 @@ public class TrainingModel {
 		validataData.setClassIndex(validataData.numAttributes() - 1);
 
 		RandomForest model = new RandomForest(); // new instance of tree
-		int sampleFeatureNumber = (data.numAttributes() - 1)/2;
-		model.setOptions(Utils.splitOptions("-I " + 200));
 		
 		String[] options = new String[2];
 		options[0] = "-R"; // "range"
-		options[1] = "1"; // first attribute
+		options[1] = "1,2"; // first attribute
 		Remove remove = new Remove(); // new instance of filter
 		remove.setOptions(options); // set options
 		remove.setInputFormat(data); // inform filter about dataset

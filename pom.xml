@@ -31,7 +31,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>RandomForestClassifyingInstances</finalName>
+		<finalName>ClassifyingInstancesRandomForest-New2</finalName>
 		<plugins>
 			<!-- any other plugins -->
 			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 

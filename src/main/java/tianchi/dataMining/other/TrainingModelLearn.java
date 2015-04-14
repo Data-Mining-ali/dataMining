@@ -5,6 +5,7 @@ import java.io.ObjectOutputStream;
 
 import weka.classifiers.Evaluation;
 import weka.classifiers.functions.Logistic;
+import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSink;
@@ -31,17 +32,19 @@ public class TrainingModelLearn {
 	
 	
 	
-	public void traingLR(String testDateFile,String validataDataFile,String evaluationFile) throws Exception{
+	public void traingJ48(String testDateFile,String validataDataFile,String evaluationFile) throws Exception{
 		Instances data = DataSource.read(testDateFile);
 		Instances validataData = DataSource.read(validataDataFile);
 		data.setClassIndex(data.numAttributes() - 1);
 		validataData.setClassIndex(validataData.numAttributes() - 1);
 
-		Logistic model = new Logistic(); // new instance of tree
+
+		J48 model = new J48(); // new instance of tree
+		//model.setOptions(options);
 		
+		model.buildClassifier(data); // build classifier		
 		
-		model.buildClassifier(data); // build classifier
-		
+		//Evaluation.evaluateModel(model, options);
 		Evaluation eval = new Evaluation(data);
 		eval.evaluateModel(model, validataData);
 		String ans =eval.toMatrixString("result:");
@@ -54,9 +57,9 @@ public class TrainingModelLearn {
 		// TODO Auto-generated method stub
 		TrainingModelLearn aModel = new TrainingModelLearn();
 
-		aModel.traingLR("E:/data/learn/credit-g.arff",
-				"E:/data/learn/credit-g-test.arff",
-				"E:/data/learn/c.txt");
+		aModel.traingJ48("E:/data/4.12/learn/credit-g.arff",
+				"E:/data/4.12/learn/credit-g-test.arff",
+				"E:/data/4.12/learn/c.txt");
 		
 	}
 
