@@ -4,6 +4,7 @@ import tianchi.dataMining.utility.FileUtil;
 import weka.classifiers.Evaluation;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
+import weka.core.Utils;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
@@ -47,6 +48,7 @@ public class TrainingModelMain {
 		Instances newValidataData = Filter.useFilter(validataData, remove);
 
 		RandomForest model = new RandomForest(); // new instance of tree
+		model.setOptions(Utils.splitOptions("-I 30"));
 		model.buildClassifier(newData); // build classifier
 		
 		Evaluation eval = new Evaluation(newData);
