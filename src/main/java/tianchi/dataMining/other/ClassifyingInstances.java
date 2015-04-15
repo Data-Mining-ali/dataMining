@@ -38,20 +38,14 @@ public class ClassifyingInstances {
 		Instances labeled = new Instances(unlabeled);
 		Instances  newunlabeled= Filter.useFilter(unlabeled, remove); // apply filter
 		
-		File output = new File(resultFile);
-		BufferedWriter out = new BufferedWriter(new FileWriter(output, true));
 		// label instances
-		out.write("result:");
-		out.newLine();
 		for (int i = 0; i < newunlabeled.numInstances(); i++) {
 		  double clsLabel = model.classifyInstance(newunlabeled.instance(i));
 		  labeled.instance(i).setClassValue(clsLabel);
-		  out.write(labeled.instance(i).toString());
-		  out.newLine();
+		  System.out.println(labeled.instance(i));
 		}
 		// save newly labeled data
-		//DataSink.write(resultFile, labeled);
-		out.close();
+		DataSink.write(resultFile, labeled);
 	}
 	
 	public void classifyingInstancesGBDT(String testDateFile,String unlabledDateFile,String resultFile) throws Exception{
