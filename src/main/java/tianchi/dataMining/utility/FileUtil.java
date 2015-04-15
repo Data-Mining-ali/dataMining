@@ -28,8 +28,13 @@ public class FileUtil {
 
 	public void close() {
 		try {
-			if(cin!=null) cin.close();
-			if(out!=null) out.close();
+			if(cin!=null){
+				cin.close();
+			} 
+			if(out!=null){
+				out.flush();
+				out.close();
+			} 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
