@@ -72,8 +72,8 @@ public class RandomData {
 		}
 	}
 	public static void main(String[] args) {
-		String path = "E:\\DataMining\\alibaba\\data\\4.15\\rawdata\\";
+		String path = "E:\\data\\4.15\\data\\raw\\";
 		RandomData rd = new RandomData();
-		rd.randomData(path+"finalTrainData.csv", path+"hascopy_finalTrainData.csv", 5);
+		rd.randomData(path+"finalTrainData.csv", path+"hascopy_finalTrainDataTwo.csv", 2);
 	}
 }

@@ -29,8 +29,9 @@ public class ChangeCsvToArff {
 	}
 	
 	public static void main(String[] args) {
-		String csvFileName ="E:\\DataMining\\alibaba\\data\\4.15\\rawdata\\intersection_data18_clas19.csv";
-		String arffFileName ="E:\\DataMining\\alibaba\\data\\4.15\\rawdata\\data\\intersection_data18_clas19.arff";
+		String path ="E:\\data\\4.15\\data\\";
+		String csvFileName = path+"raw\\hascopy_finalTrainDataThree.csv";
+		String arffFileName =path+"hascopy_finalTrainDataThree.arff";
 		ChangeCsvToArff.changeCsvToArff("hahahah", csvFileName, arffFileName);
 		
 	}

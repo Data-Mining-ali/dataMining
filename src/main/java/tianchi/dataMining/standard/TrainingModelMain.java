@@ -1,9 +1,5 @@
 package tianchi.dataMining.standard;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-
 import tianchi.dataMining.utility.FileUtil;
 import weka.classifiers.Evaluation;
 import weka.classifiers.trees.RandomForest;
