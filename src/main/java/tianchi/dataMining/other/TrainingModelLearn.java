@@ -1,17 +1,10 @@
 package tianchi.dataMining.other;
 
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-
 import weka.classifiers.Evaluation;
-import weka.classifiers.functions.Logistic;
 import weka.classifiers.trees.J48;
-import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
-import weka.core.converters.ConverterUtils.DataSink;
 import weka.core.converters.ConverterUtils.DataSource;
-import weka.filters.Filter;
-import weka.filters.unsupervised.attribute.Remove;
+
 
 //http://my.oschina.net/leopardsaga/blog/92740
 public class TrainingModelLearn {
