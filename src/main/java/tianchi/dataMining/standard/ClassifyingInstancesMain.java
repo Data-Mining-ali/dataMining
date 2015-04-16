@@ -29,6 +29,7 @@ public class ClassifyingInstancesMain {
 		
 		Classifier model = new RandomForest(); // new instance of tree
 		model.buildClassifier(newData); // build classifier
+		//model.setOptions(Utils.splitOptions("-I 30"));
 		
 		Instances unlabeled = DataSource.read(unlabledDateFile);
 		unlabeled.setClassIndex(unlabeled.numAttributes() - 1);
