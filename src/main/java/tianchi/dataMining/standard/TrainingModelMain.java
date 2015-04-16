@@ -1,10 +1,10 @@
 package tianchi.dataMining.standard;
 
+import tianchi.dataMining.utility.Contants;
 import tianchi.dataMining.utility.FileUtil;
 import weka.classifiers.Evaluation;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
-import weka.core.Utils;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
@@ -48,7 +48,7 @@ public class TrainingModelMain {
 		Instances newValidataData = Filter.useFilter(validataData, remove);
 
 		RandomForest model = new RandomForest(); // new instance of tree
-		model.setOptions(Utils.splitOptions("-I 30"));
+		//model.setOptions(Utils.splitOptions("-I 30"));
 		model.buildClassifier(newData); // build classifier
 		
 		Evaluation eval = new Evaluation(newData);
@@ -56,12 +56,23 @@ public class TrainingModelMain {
 		outputEvaluation(evaluationFile,eval);    
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		/*
 		TrainingModelMain a = new TrainingModelMain();
 		try {
 			a.traingRandomForest(args[0], args[1], args[2]);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}*/
+		for(int k=1;k<7;k++){
+			TrainingModelMain aModel = new TrainingModelMain();
+			String path = Contants.write_filepath;
+			String name = "train";
+			if(k>1) name = name +k+".arff";
+			else name = name +".arff";
+			String files[]={name,"validata.arff","result_"+k+".txt"};
+			for(int i=0;i<files.length;i++) files[i] = path+files[i];
+			aModel.traingRandomForest(files[0],files[1],files[2]);
 		}
 	}
 

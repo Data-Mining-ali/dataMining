@@ -2,6 +2,7 @@ package tianchi.dataMining.utility;
 
 import java.util.Random;
 
+
 public class RandomData {
 	/**
 	 * 
@@ -27,7 +28,7 @@ public class RandomData {
 			else incorrect++;
 		}
 		in.close();
-		System.out.println("read1 finish..");
+		System.out.println(T+" read1 finish..");
 		System.out.println("correct count:"+correct);
 		System.out.println("incorrect count:"+incorrect);
 		/*
@@ -53,7 +54,7 @@ public class RandomData {
 			}
 		}
 		System.out.println("read2 finish..");
-		System.out.println("real cnt:"+cnt+" need:"+(correct*5+incorrect));
+		System.out.println(T+" real cnt:"+cnt+" need:"+(correct*T+incorrect));
 		in.close();
 		shuffle(text);
 		for(int i=0;i<text.length;i++){
@@ -72,8 +73,13 @@ public class RandomData {
 		}
 	}
 	public static void main(String[] args) {
-		String path = "E:\\data\\4.15\\data\\raw\\";
+		String path = Contants.write_filepath;
 		RandomData rd = new RandomData();
-		rd.randomData(path+"finalTrainData.csv", path+"hascopy_finalTrainDataTwo.csv", 2);
+		int T = 7;
+		for(int i=2;i<T;i++){
+			rd.randomData(path+"train.csv", path+"train"+i+".csv", i);
+			ChangeCsvToArff.changeCsvToArff("ali", path+"train"+i+".csv", path+"train"+i+".arff");
+		}
+		
 	}
 }

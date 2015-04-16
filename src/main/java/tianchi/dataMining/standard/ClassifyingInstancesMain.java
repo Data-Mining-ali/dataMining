@@ -1,6 +1,7 @@
 package tianchi.dataMining.standard;
 
 import tianchi.dataMining.utility.FileUtil;
+import weka.classifiers.Classifier;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSink;
@@ -26,7 +27,7 @@ public class ClassifyingInstancesMain {
 		// **AFTER** setting options
 		Instances newData = Filter.useFilter(data, remove); // apply filter
 		
-		RandomForest model = new RandomForest(); // new instance of tree
+		Classifier model = new RandomForest(); // new instance of tree
 		model.buildClassifier(newData); // build classifier
 		
 		Instances unlabeled = DataSource.read(unlabledDateFile);

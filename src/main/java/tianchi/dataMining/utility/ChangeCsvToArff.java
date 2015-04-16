@@ -1,5 +1,6 @@
 package tianchi.dataMining.utility;
 
+
 public class ChangeCsvToArff {
 	private static void generateArffHead(String relation,FileUtil out,String[]attributeName){
 		out.writeLine("@relation "+relation);
@@ -29,10 +30,13 @@ public class ChangeCsvToArff {
 	}
 	
 	public static void main(String[] args) {
-		String path ="E:\\data\\4.15\\data\\";
-		String csvFileName = path+"raw\\hascopy_finalTrainDataThree.csv";
-		String arffFileName =path+"hascopy_finalTrainDataThree.arff";
-		ChangeCsvToArff.changeCsvToArff("hahahah", csvFileName, arffFileName);
+		String files[] = {"train","validata","submit"};
+		for (int i = 0; i < files.length; i++) {
+			String name = files[i];
+			String csvFileName = Contants.write_filepath +  name + ".csv";
+			String arffFileName = Contants.write_filepath + name + ".arff";
+			ChangeCsvToArff.changeCsvToArff("ali", csvFileName, arffFileName);
+		}
 		
 	}
 
