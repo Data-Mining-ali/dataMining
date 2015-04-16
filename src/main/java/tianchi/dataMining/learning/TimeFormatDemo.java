@@ -1,4 +1,4 @@
-package tianchi.dataMining.demo;
+package tianchi.dataMining.learning;
 
 import java.text.DateFormat;
 import java.text.ParseException;

@@ -1,4 +1,4 @@
-package tianchi.dataMining.demo;
+package tianchi.dataMining.learning;
 
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
