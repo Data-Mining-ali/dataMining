@@ -75,8 +75,8 @@ public class RandomData {
 	public static void main(String[] args) {
 		String path = Contants.write_filepath;
 		RandomData rd = new RandomData();
-		int T = 7;
-		for(int i=2;i<T;i++){
+		int T = 6;
+		for(int i=1;i<T;i++){
 			rd.randomData(path+"train.csv", path+"train"+i+".csv", i);
 			ChangeCsvToArff.changeCsvToArff("ali", path+"train"+i+".csv", path+"train"+i+".arff");
 		}

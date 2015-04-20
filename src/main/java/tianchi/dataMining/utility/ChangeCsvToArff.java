@@ -6,7 +6,15 @@ public class ChangeCsvToArff {
 		out.writeLine("@relation "+relation);
 		for(int i = 0; i < attributeName.length-1; i++)
 			out.writeLine("@attribute "+ attributeName[i] + " numeric");
-		out.writeLine("@attribute class{0,1}");
+		out.writeLine("@attribute class {0,1}");
+		out.writeLine("@data");
+	}
+	
+	private static void generateArffHeadNumericClass(String relation,FileUtil out,String[]attributeName){
+		out.writeLine("@relation "+relation);
+		for(int i = 0; i < attributeName.length-1; i++)
+			out.writeLine("@attribute "+ attributeName[i] + " numeric");
+		out.writeLine("@attribute class numeric");
 		out.writeLine("@data");
 	}
 	
@@ -21,7 +29,7 @@ public class ChangeCsvToArff {
 		FileUtil out = new FileUtil(arffFileName, "out");
 		String cinString = null;
 		cinString = cin.readLine();	
-		generateArffHead(relation,out,cinString.split(","));
+		generateArffHeadNumericClass(relation,out,cinString.split(","));
 		while((cinString=cin.readLine())!=null){
 			out.writeLine(cinString);
 		}
@@ -30,7 +38,8 @@ public class ChangeCsvToArff {
 	}
 	
 	public static void main(String[] args) {
-		String files[] = {"train","validata","submit"};
+		//String files[] = {"train","validata","submit"};
+		String files[] = {"train","submit"};
 		for (int i = 0; i < files.length; i++) {
 			String name = files[i];
 			String csvFileName = Contants.write_filepath +  name + ".csv";

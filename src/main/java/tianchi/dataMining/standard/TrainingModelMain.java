@@ -3,6 +3,7 @@ package tianchi.dataMining.standard;
 import tianchi.dataMining.utility.Contants;
 import tianchi.dataMining.utility.FileUtil;
 import weka.classifiers.Evaluation;
+import weka.classifiers.meta.AdditiveRegression;
 import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
@@ -48,7 +49,7 @@ public class TrainingModelMain {
 		validataData.setClassIndex(validataData.numAttributes() - 1);
 		Instances newValidataData = Filter.useFilter(validataData, remove);
 
-		J48 model = new J48(); // new instance of tree
+		RandomForest model = new RandomForest(); // new instance of tree
 		//model.setOptions(Utils.splitOptions("-I 30"));
 		model.buildClassifier(newData); // build classifier
 		System.out.println(model.toString());
@@ -57,6 +58,33 @@ public class TrainingModelMain {
 		eval.evaluateModel(model, newValidataData);
 		outputEvaluation(evaluationFile,eval);    
 	}
+	
+	
+	public void traingGBDT(String testDateFile,String validataDataFile,String evaluationFile) throws Exception{
+		String[] options = new String[2];
+		options[0] = "-R"; // "range"
+		options[1] = "1,2"; // first attribute
+		Remove remove = new Remove(); // new instance of filter
+		remove.setOptions(options); // set options		
+		
+		Instances data = DataSource.read(testDateFile);
+		data.setClassIndex(data.numAttributes() - 1);
+		remove.setInputFormat(data);  // inform filter about dataset
+		Instances newData = Filter.useFilter(data, remove); // apply filter
+		
+		Instances validataData = DataSource.read(validataDataFile);
+		validataData.setClassIndex(validataData.numAttributes() - 1);
+		Instances newValidataData = Filter.useFilter(validataData, remove);
+
+		AdditiveRegression model = new AdditiveRegression(); // new instance of tree
+		//model.setOptions(Utils.splitOptions("-I 30"));
+		model.buildClassifier(newData); // build classifier
+		System.out.println(model.toString());
+		
+		Evaluation eval = new Evaluation(newData);
+		eval.evaluateModel(model, newValidataData);  
+	}
+	
 	
 	public static void main(String[] args) throws Exception {
 		/*
