@@ -24,7 +24,8 @@ public class ResultApp {
 	}
 	public static void main(String[] args) {
 		ResultApp app = new ResultApp();
-			app.work(i);
+		for(int i=1;i<6;i++){	
+		    app.work(i);
 		}
 	}
 }

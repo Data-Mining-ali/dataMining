@@ -3,6 +3,7 @@ package tianchi.dataMining.standard;
 import tianchi.dataMining.utility.Contants;
 import tianchi.dataMining.utility.FileUtil;
 import weka.classifiers.Evaluation;
+import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
@@ -47,9 +48,10 @@ public class TrainingModelMain {
 		validataData.setClassIndex(validataData.numAttributes() - 1);
 		Instances newValidataData = Filter.useFilter(validataData, remove);
 
-		RandomForest model = new RandomForest(); // new instance of tree
+		J48 model = new J48(); // new instance of tree
 		//model.setOptions(Utils.splitOptions("-I 30"));
 		model.buildClassifier(newData); // build classifier
+		System.out.println(model.toString());
 		
 		Evaluation eval = new Evaluation(newData);
 		eval.evaluateModel(model, newValidataData);
