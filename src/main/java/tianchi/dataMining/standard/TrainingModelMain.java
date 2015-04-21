@@ -2,11 +2,12 @@ package tianchi.dataMining.standard;
 
 import tianchi.dataMining.utility.Contants;
 import tianchi.dataMining.utility.FileUtil;
+import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
 import weka.classifiers.meta.AdditiveRegression;
-import weka.classifiers.trees.J48;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
+import weka.core.converters.ConverterUtils.DataSink;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
@@ -61,29 +62,36 @@ public class TrainingModelMain {
 	
 	
 	public void traingGBDT(String testDateFile,String validataDataFile,String evaluationFile) throws Exception{
-		String[] options = new String[2];
-		options[0] = "-R"; // "range"
-		options[1] = "1,2"; // first attribute
-		Remove remove = new Remove(); // new instance of filter
-		remove.setOptions(options); // set options		
-		
-		Instances data = DataSource.read(testDateFile);
-		data.setClassIndex(data.numAttributes() - 1);
-		remove.setInputFormat(data);  // inform filter about dataset
-		Instances newData = Filter.useFilter(data, remove); // apply filter
-		
-		Instances validataData = DataSource.read(validataDataFile);
-		validataData.setClassIndex(validataData.numAttributes() - 1);
-		Instances newValidataData = Filter.useFilter(validataData, remove);
-
-		AdditiveRegression model = new AdditiveRegression(); // new instance of tree
-		//model.setOptions(Utils.splitOptions("-I 30"));
-		model.buildClassifier(newData); // build classifier
-		System.out.println(model.toString());
-		
-		Evaluation eval = new Evaluation(newData);
-		eval.evaluateModel(model, newValidataData);  
+			
+			Instances data = DataSource.read(testDateFile);		
+			data.setClassIndex(data.numAttributes() - 1);						
+			
+			String[] options = new String[2];
+			options[0] = "-R"; // "range"
+			options[1] = "1,2"; // first attribute
+			Remove remove = new Remove(); // new instance of filter
+			remove.setOptions(options); // set options
+			remove.setInputFormat(data); // inform filter about dataset
+			// **AFTER** setting options
+			Instances newData = Filter.useFilter(data, remove); // apply filter
+			
+			Classifier model = new AdditiveRegression(); // new instance of tree
+			model.buildClassifier(newData); // build classifier
+			
+			Instances unlabeled = DataSource.read(validataDataFile);
+			unlabeled.setClassIndex(unlabeled.numAttributes() - 1);
+			Instances labeled = new Instances(unlabeled);
+			Instances  newunlabeled= Filter.useFilter(unlabeled, remove); // apply filter
+			
+			// label instances
+			for (int i = 0; i < newunlabeled.numInstances(); i++) {
+			  double clsLabel = model.classifyInstance(newunlabeled.instance(i));
+			  labeled.instance(i).setClassValue(clsLabel);
+			}
+			//save newly labeled data
+			DataSink.write(evaluationFile, labeled);	
 	}
+
 	
 	
 	public static void main(String[] args) throws Exception {

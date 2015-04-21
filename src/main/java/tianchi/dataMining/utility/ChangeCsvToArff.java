@@ -38,8 +38,8 @@ public class ChangeCsvToArff {
 	}
 	
 	public static void main(String[] args) {
-		//String files[] = {"train","validata","submit"};
-		String files[] = {"train","submit"};
+		String files[] = {"train","validata","submit"};
+		//String files[] = {"train","submit"};
 		for (int i = 0; i < files.length; i++) {
 			String name = files[i];
 			String csvFileName = Contants.write_filepath +  name + ".csv";

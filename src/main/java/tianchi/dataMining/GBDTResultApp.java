@@ -4,7 +4,7 @@ import tianchi.dataMining.standard.ClassifyingInstancesMain;
 import tianchi.dataMining.standard.GenerateSubmit;
 import tianchi.dataMining.utility.Contants;
 
-public class ResultApp {
+public class GBDTResultApp {
 	public void work(int k){
 		try{
 			ClassifyingInstancesMain aModel = new ClassifyingInstancesMain();
@@ -14,15 +14,15 @@ public class ResultApp {
 			String files[]={name,"submit.arff","submit-data//result_"+k+".csv"};
 			for (int i = 0; i < files.length; i++)
 				files[i] = path + files[i];
-			aModel.classifyingInstancesRandomForest(files[0],files[1],files[2]);
+			aModel.classifyingInstancesGBDT(files[0],files[1],files[2]);
 			System.out.println(k+" finished..");
-			new GenerateSubmit().randomForest("result_"+k+".csv",path+"submit-data//");
+			//new GenerateSubmit().work("result_"+k+".csv",path+"submit-data//");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 	}
 	public static void main(String[] args) {
-		ResultApp app = new ResultApp();
+		GBDTResultApp app = new GBDTResultApp();
 		for(int i=5;i<6;i++){	
 		    app.work(i);
 		}

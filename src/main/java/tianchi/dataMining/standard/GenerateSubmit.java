@@ -9,7 +9,7 @@ public class GenerateSubmit {
 	 * @param source filename
 	 * @param path filepath
 	 */
-	public void work(String source,String path){
+	public void randomForest(String source,String path){
 		FileUtil in = new FileUtil(path+source, "in");
 		FileUtil out = new FileUtil(path+"submit_"+source,"out");
 		String str;
