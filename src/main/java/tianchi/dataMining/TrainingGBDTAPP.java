@@ -33,7 +33,7 @@ public class TrainingGBDTAPP {
 		// TODO Auto-generated method stub
 		TrainingGBDTAPP aGbdtapp = new TrainingGBDTAPP();
 		EvaluationGBDT eval = new EvaluationGBDT(Contants.write_filepath + "validata.csv");
-		int numbers[] =  {400,500,600};
+		int numbers[] =  {100,150,200,250,300};
 		for(int i=1;i<6;i++){
 			aGbdtapp.work(i, numbers, eval);;
 		}	

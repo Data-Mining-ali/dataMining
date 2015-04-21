@@ -5,7 +5,7 @@ import tianchi.dataMining.standard.GenerateSubmit;
 import tianchi.dataMining.utility.Contants;
 
 public class GBDTResultApp {
-	public void work(int k){
+	public void work(int k,int num){
 		try{
 			ClassifyingInstancesMain aModel = new ClassifyingInstancesMain();
 			String path = Contants.write_filepath; //设置目录
@@ -15,8 +15,8 @@ public class GBDTResultApp {
 			for (int i = 0; i < files.length; i++)
 				files[i] = path + files[i];
 			aModel.classifyingInstancesGBDT(files[0],files[1],files[2]);
+			new GenerateSubmit().gbdt("result_"+k+".csv",path+"submit-data//", num);
 			System.out.println(k+" finished..");
-			//new GenerateSubmit().work("result_"+k+".csv",path+"submit-data//");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -24,7 +24,7 @@ public class GBDTResultApp {
 	public static void main(String[] args) {
 		GBDTResultApp app = new GBDTResultApp();
 		for(int i=5;i<6;i++){	
-		    app.work(i);
+		    app.work(i,450);
 		}
 	}
 }

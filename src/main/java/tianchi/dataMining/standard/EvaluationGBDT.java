@@ -26,6 +26,8 @@ public class EvaluationGBDT {
 		totleRightNumber = map.size();		
 	}
 	
+	
+	
 	public void sortData(String fileName) {
 		list = new LinkedList<GBDTItem>();
 		FileUtil cin = new FileUtil(fileName,"in");
