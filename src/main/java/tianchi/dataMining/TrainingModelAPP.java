@@ -12,7 +12,7 @@ public class TrainingModelAPP {
 	public void work(int k){
 		try{
 			TrainingModelMain aModel = new TrainingModelMain();
-			String path = Contants.write_filepath + "data//";//设置目录，并在目录下要建一个文件夹名字validata-output
+			String path = Contants.write_filepath;//设置目录，并在目录下要建一个文件夹名字validata-output
 			String name = "train";
 			if (k > 1)
 				name = name + k + ".arff";
@@ -30,7 +30,7 @@ public class TrainingModelAPP {
 	}
 	public static void main(String[] args) {
 		TrainingModelAPP app = new TrainingModelAPP();
-		for(int i=2;i<=2;i++){
+		for(int i=3;i<=11;i++){
 			app.work(i);
 		}
 	}

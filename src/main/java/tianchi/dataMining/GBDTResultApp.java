@@ -23,8 +23,8 @@ public class GBDTResultApp {
 	}
 	public static void main(String[] args) {
 		GBDTResultApp app = new GBDTResultApp();
-		for(int i=5;i<6;i++){	
-		    app.work(i,450);
+		for(int i=7;i<8;i++){	
+		    app.work(i,400);
 		}
 	}
 }

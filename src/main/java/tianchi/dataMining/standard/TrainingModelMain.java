@@ -34,6 +34,24 @@ public class TrainingModelMain {
 		out.close();
 	}
 	
+	
+	private void printEvaluation( Evaluation eval) throws Exception {
+		System.out.println("ans:");
+		String ans =eval.toMatrixString("Matrix:");
+		System.out.println(ans);
+		
+		System.out.println("index 0 class：");	
+		System.out.println("precision:"+ eval.precision(0));
+		System.out.println("recall:"+ eval.recall(0));
+		System.out.println("fMeasure:"+ eval.fMeasure(0));
+		System.out.println("");
+				
+		System.out.println("index 1 class：");
+		System.out.println("precision:"+ eval.precision(1));
+		System.out.println("recall:"+ eval.recall(1));
+		System.out.println("fMeasure:"+ eval.fMeasure(1));
+	}
+	
 	public void traingRandomForest(String testDateFile,String validataDataFile,String evaluationFile) throws Exception{
 		String[] options = new String[2];
 		options[0] = "-R"; // "range"
@@ -57,7 +75,7 @@ public class TrainingModelMain {
 		
 		Evaluation eval = new Evaluation(newData);
 		eval.evaluateModel(model, newValidataData);
-		outputEvaluation(evaluationFile,eval);    
+		printEvaluation(eval);    
 	}
 	
 	

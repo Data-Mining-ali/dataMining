@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+import java_cup.internal_error;
 import tianchi.dataMining.utility.Contants;
 import tianchi.dataMining.utility.FileUtil;
 
@@ -77,14 +78,19 @@ public class MergeData {
 					map.put(string,1);
 				}
 			}
+			cin.close();
 		}
 		FileUtil out = new FileUtil(desName, "out");
+		int cnt =0;
 		for(int i = filesName.length; i>0; i--){
+			cnt = 0;
 			for (Map.Entry<String, Integer> entry : map.entrySet()){
 			    if(entry.getValue()==i){
-			    	out.writeLine(entry.getKey());
+			    	out.writeLine(entry.getKey() + "   "+i);
+			    	cnt++;
 			    }
 			}
+			System.out.println(i+":  "+cnt);
 		}
 		out.close();
 	}
@@ -94,13 +100,10 @@ public class MergeData {
 		MergeData aModel = new MergeData();
 		String path = Contants.mac_file +"output/" +"submit-data/";
 		String name[] = new String[2];
-		name[0] = "result_5.csv";
-		//name[1] = "result_5_17.csv";
-		for(int i=0;i<1;i++){
-			aModel.sortData(path+name[i], path+"sort_"+i+".csv");
-		}
-		aModel.getResult(path+"sort_"+0+".csv", path+"sort_"+0+"_Last.csv");
+		name[1] = path +"submit_result_8.csv";
+		name[0] = path +"tianchi_mobile_recommendation_predict.csv";
 		
+		MergeData.mergeData(name, path+"haha.txt");
 	}
 
 }

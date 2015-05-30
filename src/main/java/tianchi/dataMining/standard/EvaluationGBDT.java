@@ -49,7 +49,8 @@ public class EvaluationGBDT {
 			}
 		}
 		double p = rightNumber*1.0/number;
-		double r = rightNumber*1.0/totleRightNumber;
+		//double r = rightNumber*1.0/totleRightNumber;
+		double r = rightNumber*1.0/395;
 		double f = 2.0*p*r/(p+r);
 		System.out.println("p:" + p);
 		System.out.println("r:" + r);

@@ -55,6 +55,7 @@ public class GenerateSubmit {
 		out.writeLine("user_id,item_id");
 		for(int i=0;i<num;i++){
 			GBDTItem r = list.get(i);
+			System.out.println(r.id +"   "+  r.clas);
 			out.writeLine(r.id);
 		}
 		cin.close();
